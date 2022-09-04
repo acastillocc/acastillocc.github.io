@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.page5
+{
+	z-index: 6;
+}
+
+.page5 .scene2
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	z-index: 2;
+	min-height: 350px;
+	min-width: 550px;
+	background-image: url(../files/pag5/background.jpg);
+	background-size: cover;
+}
+
+.page5 .scene2 span.action
+{
+	float: left;
+	width: 12%;
+	height: 20%;
+	margin-left: 15%;
+	margin-top: 20%;
+	cursor:pointer;
+}
+
+.page5 .scene2 span.smoke
+{
+	background-image: url(../files/pag5/smoke.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 155px;
+	width: 126px;
+	position: absolute;	
+}
+
+.page5 .scene2.special
+{
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}

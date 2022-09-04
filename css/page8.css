@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.page8
+{
+	z-index: 3;
+}
+
+.page8 .scene3
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	z-index: 2;
+	min-height: 350px;
+	min-width: 550px;
+	background-image: url(../files/pag8/marco.png);
+	background-position: center center;
+}
+
+.page8 .scene3 .img_photo
+{
+	width: 525px;
+	height: 390px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin-top: -199px;
+	margin-left: -264px;
+}
+

@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+.page2
+{
+	z-index: 9;
+}
+
+.page2 .background
+{
+	background-image: url(../files/pag2/background.jpg);
+	background-repeat: repeat;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	min-height: 350px;
+	min-width: 550px;
+}
+
+.page2 .scene1
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	z-index: 2;
+	min-height: 350px;
+	min-width: 550px;
+	background-image: url(../files/pag2/scene1.png);
+	
+	
+}
+.page2 .scene1.special
+{
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s ;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+}
+.page2 .scene2
+{
+	background-image: url(../files/pag2/scene2.png);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	z-index: 3;
+	min-height: 350px;
+	min-width: 550px;
+	
+}
+
+.page2 .scene2.special
+{
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-ms-transition: all 1s ;
+	-o-transition: all 1s;
+	transition: all 1s;
+}

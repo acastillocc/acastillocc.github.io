@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.page9
+{
+	z-index: 2;
+}
+
+.page9 .scene3
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	z-index: 2;
+	min-height: 350px;
+	min-width: 550px;
+	background-image: url(../files/pag9/Tico.jpg);
+	background-position: right center;
+	background-size:cover;
+}

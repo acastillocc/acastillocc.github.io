@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+.page4
+{
+	z-index: 7;
+}
+
+.page4 .background1
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	background-image: url(../files/pag4/background.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: cover;
+}
+
+.page4 .scene2
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	z-index: 2;
+	min-height: 350px;
+	min-width: 550px;
+	background-image: url(../files/pag4/scene1.png);
+	background-size: cover;
+}
+
+.page4 .scene2.special
+{
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+

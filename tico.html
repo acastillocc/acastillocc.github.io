@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Marcianito Tico</title>
+    <link rel="icon" type="image/png" href="/files/pag10/nave.png" />
+
+    <link href="css/general.css" rel="stylesheet" type="text/css" />
+    <link href="css/page1.css" rel="stylesheet" type="text/css" />
+    <link href="css/page2.css" rel="stylesheet" type="text/css" />
+    <link href="css/page3.css" rel="stylesheet" type="text/css" />
+    <link href="css/page4.css" rel="stylesheet" type="text/css" />
+    <link href="css/page5.css" rel="stylesheet" type="text/css" />
+    <link href="css/page6.css" rel="stylesheet" type="text/css" />
+    <link href="css/page7.css" rel="stylesheet" type="text/css" />
+    <link href="css/page8.css" rel="stylesheet" type="text/css" />
+    <link href="css/page9.css" rel="stylesheet" type="text/css" />
+    <link href="css/page10.css" rel="stylesheet" type="text/css" />
+    <link
+      href="css/jquery-ui-1.8.24.custom.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/jquery-ui-1.8.24.custom.min.js"
+    ></script>
+    <script type="text/javascript" src="js/general-functions.js"></script>
+    <script type="text/javascript" src="js/contents.js"></script>
+    <script type="text/javascript" src="js/pagination.js"></script>
+    <script type="text/javascript" src="js/parallax.js"></script>
+  </head>
+  <script type="text/javascript">
+    var image0 = $("<img />").attr("src", "files/pag1/background.jpg");
+    var image1 = $("<img />").attr("src", "files/pag1/scene1.png");
+    var image3 = $("<img />").attr("src", "files/pag1/scene2.png");
+    var image4 = $("<img />").attr("src", "files/pag1/scene2-2.png");
+    var image4 = $("<img />").attr("src", "files/pag1/scene2-2.png");
+    var image5 = $("<img />").attr("src", "files/pag6/scene2.jpg");
+    var image6 = $("<img />").attr("src", "files/pag6/scene2-2.jpg");
+    var image7 = $("<img />").attr("src", "files/pag1/light2.png");
+    var image8 = $("<img />").attr("src", "files/pag1/light.png");
+    var image9 = $("<img />").attr("src", "files/pag2/background.jpg");
+    var image10 = $("<img />").attr("src", "files/pag2/scene1.png");
+    var image11 = $("<img />").attr("src", "files/pag2/scene2.png");
+    var image12 = $("<img />").attr("src", "files/pag3/scene1.png");
+    var image13 = $("<img />").attr("src", "files/pag3/scene2.png");
+    var image14 = $("<img />").attr("src", "files/pag4/background.jpg");
+    var image15 = $("<img />").attr("src", "files/pag4/scene1.png");
+    var image16 = $("<img />").attr("src", "files/pag5/background.jpg");
+    var image17 = $("<img />").attr("src", "files/pag5/smoke.png");
+    var image18 = $("<img />").attr("src", "files/pag6/scene2.jpg");
+    var image19 = $("<img />").attr("src", "files/pag6/scene2-2.jpg");
+    var image20 = $("<img />").attr("src", "files/pag7/background.png");
+    var image21 = $("<img />").attr("src", "files/pag8/marco.png");
+    var image22 = $("<img />").attr("src", "files/pag9/Tico.jpg");
+    var image23 = $("<img />").attr("src", "files/pag10/nave.png");
+    var image24 = $("<img />").attr("src", "files/back.png");
+    var image25 = $("<img />").attr("src", "files/next.png");
+    var image26 = $("<img />").attr("src", "files/back-active.png");
+    var image27 = $("<img />").attr("src", "files/next-active.png");
+
+    $(document).ready(function () {
+      resize();
+      $(".light1").click(function () {
+        $(".scene2").removeClass("normal");
+        $(".scene2").addClass("special");
+      });
+      $(".light2").click(function () {
+        $(".scene2").removeClass("special");
+        $(".scene2").addClass("normal");
+      });
+      $(".page3 .scene2").click(function () {
+        $(this).toggleClass("rotate");
+      });
+      $(".page5 .scene2 span.action").click(function () {
+        var smoke = $(".page5 .scene2 span.action span.smoke");
+        smoke.animate(
+          {
+            "margin-top": "-=40px",
+            opacity: 3,
+          },
+          1000,
+          function () {
+            smoke.animate({ opacity: 0 }, 500, function () {
+              smoke.css("margin-top", "-50px");
+            });
+          }
+        );
+      });
+      $(".page6 .scene3").mouseenter(function () {
+        $(this).toggleClass("special");
+      });
+      $(".page6 .scene3").mouseleave(function () {
+        $(this).toggleClass("special");
+      });
+    });
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $("#img_prev").attr("src", e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+    $(window).load(function () {
+      // Una vez se cargue al completo la página desaparecerá el div "loader"
+      $("#div_loader").fadeOut(400, function () {
+        $("#img_loader").hide();
+        $("#loader").fadeOut(600, function () {
+          $("#loader").remove();
+          $("#img_loader").remove();
+          $("#div_loader").remove();
+          $("body").removeAttr("style");
+          $("#video_trazas").removeAttr("style");
+        });
+      });
+      $("#text").html(textPage[current]).delay(500);
+      $("#text").fadeIn(1000);
+      introFunc();
+    });
+  </script>
+  <body onload="contMonedas()">
+    <img id="img_loader" src="files/img_loader.png" />
+    <div id="div_loader">Cargando Historia...</div>
+    <div id="loader"></div>
+
+    <div class="page page1">
+      <div class="background" style="background-position: 0px 0px"></div>
+      <div
+        class="scene1"
+        speed="3"
+        desp="50"
+        style="background-position: 80% 50%"
+      ></div>
+      <div
+        class="scene2 normal"
+        speed="6"
+        desp="50"
+        style="background-position: 20% 50%"
+      >
+        <div class="light" style="left: 3%">
+          <span class="light1" title="apagar"></span
+          ><span class="light2" title="encender"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page page2" style="display: none">
+      <div class="background" style="background-position: 0px 0px"></div>
+      <div class="scene1" style="background-position: 100% 50%"></div>
+      <div
+        class="scene2"
+        speed="70"
+        desp="80"
+        style="background-position: 0% 50%"
+      ></div>
+    </div>
+
+    <div class="page page3" style="display: none">
+      <div class="background2" style="background-position: 0px 0px"></div>
+      <div
+        class="scene0"
+        speed="0"
+        desp="0"
+        style="background-position: 50% 50%"
+      ></div>
+      <div
+        class="scene2"
+        speed="20"
+        desp="50"
+        style="background-position: 100% 50%"
+      >
+        <span class="activate"></span>
+      </div>
+    </div>
+
+    <div class="page page4" style="display: none">
+      <div class="background1" style="background-position: 0px 0px"></div>
+      <div
+        class="scene2"
+        speed="10"
+        desp="50"
+        style="background-position: 30% 50%"
+      ></div>
+    </div>
+
+    <div class="page page5" style="display: none">
+      <div
+        class="scene2"
+        speed="0"
+        desp="0"
+        style="background-position: 50% 50%"
+      >
+        <span class="action"
+          ><span class="smoke" style="opacity: 0; margin-top: -50px"></span
+        ></span>
+      </div>
+    </div>
+
+    <div class="page page6" style="display: none">
+      <div class="scene3 normal"></div>
+    </div>
+
+    <div class="page page7" style="display: none">
+      <div class="scene3"></div>
+    </div>
+
+    <div class="page page8" style="display: none">
+      <div class="scene3">
+        <div class="info content">
+          <p>
+            Selecciona una fotografia tuya que tengas en la computadora para que
+            Tico te identifique.
+          </p>
+          <input type="file" onchange="readURL(this);" />
+        </div>
+        <div class="img_photo">
+          <img id="img_prev" src="" width="525" height="390" />
+        </div>
+      </div>
+    </div>
+
+    <div class="page page9" style="display: none">
+      <div class="scene3"></div>
+    </div>
+
+    <div class="page page10" style="display: none">
+      <div class="scene3">
+        <div class="info content">Esta es la nave que Tico dibujo para ti!</div>
+      </div>
+    </div>
+
+    <div class="page page11" style="display: none">
+      <div class="scene2">
+        <div class="info content">¡Danos una calificación!</div>
+      </div>
+    </div>
+
+    <div id="monedas" style="display: none">
+      <img src="./files/moneda.png" alt="moneda" width="30" height="30" />
+      <span id="cont"></span>
+    </div>
+
+    <div id="content">
+      <div id="text" style="display: none"></div>
+      <div id="footer"></div>
+    </div>
+    <div class="musicContainer">
+      <div id="play" title="Reproducir" onclick="playAudio()" type="button" style="display: none">
+        <img src="/files/play.png" alt="play" />
+      </div>
+      <div
+        id="pause"
+        title="Detener"
+        onclick="pauseAudio()"
+        type="button"
+        style="display: none"
+      >
+        <img src="/files/stop.png" />
+      </div>
+    </div>
+
+    <audio id="music" loop autoplay>
+      <source src="./files/audioTico.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      var music = document.getElementById("music");
+      music.volume = 0.2;
+
+      function playAudio() {
+        music.play();
+      }
+
+      function pauseAudio() {
+        music.pause();
+      }
+    </script>
+
+    <div id="next" title="Siguiente" onclick="next();contMonedas()"></div>
+    <div
+      id="back"
+      title="Anterior"
+      onclick="prev();"
+      style="display: none"
+    ></div>
+    <div
+      class="dialog_name"
+      title="Panel de la Computadora Central."
+      style="display: none"
+    >
+      <p>Digita tu nombre completo para que tico te identifique</p>
+      <input id="name_text" name="name_text" type="text" align="center" />
+    </div>
+  </body>
+</html>

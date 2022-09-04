@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.page6
+{
+	z-index: 5;
+}
+
+.page6 .scene3
+{
+	background-image: url(../files/pag6/scene2.jpg);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	z-index: 2;
+	min-height: 350px;
+	min-width: 550px;
+	background-size: cover;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-ms-transition: all 1s;
+	-o-transition: all 1s;
+	transition: all 1s;
+	cursor: pointer;
+}
+
+.page6 .scene3.special
+{
+	background-image: url(../files/pag6/scene2-2.jpg) !important;
+}
