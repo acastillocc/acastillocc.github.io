@@ -1,21 +1,82 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-.page10
-{
-	z-index: 1;
+.page10 {
+  z-index: 1;
 }
 
-.page10 .scene3
-{
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	background-repeat: no-repeat;
-	z-index: 2;
-	min-height: 350px;
-	min-width: 550px;
-	background-image: url(../files/pag10/nave.png);
-	background-position: center center;
+#backgroundNave {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  z-index: 2;
+  min-height: 350px;
+  min-width: 550px;
+  background-image: url(../files/pag10/NaveSinColor.png);
+  background-position: center center;
+}
+
+#NaveAzul {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  z-index: 2;
+  min-height: 350px;
+  min-width: 550px;
+  background-image: url(../files/pag10/nave.png);
+  background-position: center center;
+}
+
+#NaveMorada {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  z-index: 2;
+  min-height: 350px;
+  min-width: 550px;
+  background-image: url(../files/pag10/naveMorada.png);
+  background-position: center center;
+}
+
+#NaveAmarilla {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  z-index: 2;
+  min-height: 350px;
+  min-width: 550px;
+  background-image: url(../files/pag10/naveAmarilla.png);
+  background-position: center center;
+}
+
+#NaveGris {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  z-index: 2;
+  min-height: 350px;
+  min-width: 550px;
+  background-image: url(../files/pag10/navebw.png);
+  background-position: center center;
+}
+
+#colorAzul,
+#colorMorado,
+#colorAmarillo,
+#colorGris,
+#sinColor {
+  width: 5vw;
+  padding-right: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in
+}
+
+#colorAzul:hover, #colorMorado:hover, #colorAmarillo:hover, #colorGris:hover {
+  transform: scale(0.8) rotate(6deg) translateX(0px) translateY(0px);
+  transition: all 0.2s ease-in;
 }

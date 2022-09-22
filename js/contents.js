@@ -2,7 +2,7 @@
 var crop = 10;
 var intro = false;
 var current = 1;
-var pageTotale = 11;
+var pageTotale = 12;
 var textPage = new Array(10);
 var interactionPage1 = new Array(10);
 var interactionPage2 = new Array(10);
@@ -115,6 +115,17 @@ textPage[9] =
   "aventura tan especial que vivió el día de su cumpleaños, al conocer" +
   " la Tierra, y al descubrir a <span class='name_user' style='color: red'></span></p>";
 textPage[10] =
+  " <p> A Tico le encantaría que personalizaras su nave espacial. </p>" +
+  " ¡Ayúdalo a que se vea mejor! </p>"  +
+  " <p> Selecciona el color que te gustaría para pintar la nave espacial de Tico. </p> <br> <br>" +
+  " <img id='colorAzul' src='../files/pag10/colorAzul.png' onclick='changeColor()'>"+
+  " <img id='colorMorado' src='../files/pag10/colorMorado.png'>" +
+  " <img id='colorAmarillo' src='../files/pag10/colorAmarillo.png'>" +
+  " <img id='colorGris' src='../files/pag10/colorGris.png'>" +
+  " <img id='sinColor' src='../files/pag10/sinColor.png'>";
+  
+
+textPage[11] =
   "Pídele a tus amigos, conocidos o familiares que te escriban una" +
   " cualidad en cada color. Para que recuerdes que existen muchos" +
   " seres como Tico que te consideran una persona única y admirable." +
@@ -122,7 +133,7 @@ textPage[10] =
   "<input type='text' name='textfield5' id='textfield5' style='border-color:#903;' /><input type='text' name='textfield6' id='textfield6' style='border-color:#FC0;' /></form>" +
   "<a href='index.html' class='button-finalizar'>Finalizar esta historia!</a>";
 
-textPage[11] = "";
+textPage[12] = "";
 
 interactionPage1[1] = "80% 50%";
 interactionPage2[1] = "20% 50%";
@@ -136,39 +147,39 @@ interactionPage2[3] = "100% 50%";
 interactionPage1[4] = "50% 50%";
 interactionPage2[4] = "100% 50%";
 
-function contMonedas() {
-  var mon = 0;
+// function contMonedas() {
+//   var mon = 0;
 
-  if ($("#name_text").val() != "") {
-    mon += 2;
-  }
-  // if ($("#inputHeroe").val() != "") {
-  //   mon += 5;
-  // }
-  // } else {
-  //   mon = mon;
-  // }
+//   if ($("#name_text").val() != "") {
+//     mon += 2;
+//   }
+//   if ($("#inputHeroe").val() != "") {
+//     mon += 5;
+//   }
+//   } else {
+//     mon = mon;
+//   }
 
-  // if ($("#inputMusica").val() != "") {
-  //   mon = mon + 5;
-  // } else {
-  //   mon = mon;
-  // }
+//   if ($("#inputMusica").val() != "") {
+//     mon = mon + 5;
+//   } else {
+//     mon = mon;
+//   }
 
-  // if ($("#inputAnimal").val() != "") {
-  //   mon = mon + 5;
-  // } else {
-  //   mon = mon;
-  // }
+//   if ($("#inputAnimal").val() != "") {
+//     mon = mon + 5;
+//   } else {
+//     mon = mon;
+//   }
 
-  // if ($("#inputDeportista").val() != "") {
-  //   mon = mon + 5;
-  // } else {
-  //   mon = mon;
-  // }
+//   if ($("#inputDeportista").val() != "") {
+//     mon = mon + 5;
+//   } else {
+//     mon = mon;
+//   }
 
-  var contMonedas = (document.getElementById("cont").innerHTML =
-    "Monedas: " + mon);
+//   var contMonedas = (document.getElementById("cont").innerHTML =
+//     "Monedas: " + mon);
 
-  console.log(contMonedas);
-}
+//   console.log(contMonedas);
+// }

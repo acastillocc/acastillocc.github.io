@@ -55,7 +55,7 @@
     var image20 = $("<img />").attr("src", "files/pag7/background.png");
     var image21 = $("<img />").attr("src", "files/pag8/marco.png");
     var image22 = $("<img />").attr("src", "files/pag9/Tico.jpg");
-    var image23 = $("<img />").attr("src", "files/pag10/nave.png");
+    var image23 = $("<img />").attr("src", "files/pag10/navebw.png");
     var image24 = $("<img />").attr("src", "files/back.png");
     var image25 = $("<img />").attr("src", "files/next.png");
     var image26 = $("<img />").attr("src", "files/back-active.png");
@@ -122,7 +122,7 @@
       introFunc();
     });
   </script>
-  <body onload="contMonedas()">
+  <body>
     <img id="img_loader" src="files/img_loader.png" />
     <div id="div_loader">Cargando Historia...</div>
     <div id="loader"></div>
@@ -228,9 +228,14 @@
     </div>
 
     <div class="page page10" style="display: none">
-      <div class="scene3">
-        <div class="info content">Esta es la nave que Tico dibujo para ti!</div>
-      </div>
+      <div class="info content">Esta es la nave que Tico dibujo para ti!</div>
+      <div id="backgroundNave"></div>
+      <div id="NaveAzul" style="display:none;"></div>
+      <div id="NaveMorada" style="display:none;"></div>
+      <div id="NaveAmarilla" style="display:none;"></div>
+      <div id="NaveGris" style="display:none;"></div>
+      <div id="sinColor" style="display:none;"></div>
+
     </div>
 
     <div class="page page11" style="display: none">
@@ -239,9 +244,11 @@
       </div>
     </div>
 
-    <div id="monedas" style="display: none">
-      <img src="./files/moneda.png" alt="moneda" width="30" height="30" />
-      <span id="cont"></span>
+    <div class="containerMonedas">
+      <div id="monedas" style="display: none">
+        <img src="./files/moneda.png" alt="moneda" width="30" height="30" />
+        <span id="cont"></span>
+      </div>
     </div>
 
     <div id="content">
@@ -249,8 +256,14 @@
       <div id="footer"></div>
     </div>
     <div class="musicContainer">
-      <div id="play" title="Reproducir" onclick="playAudio()" type="button" style="display: none">
-        <img src="/files/play.png" alt="play" />
+      <div
+        id="play"
+        title="Reproducir"
+        onclick="playAudio()"
+        type="button"
+        style="display: none"
+      >
+        <img src="/files/play.png" alt="playButton" />
       </div>
       <div
         id="pause"
@@ -280,7 +293,7 @@
       }
     </script>
 
-    <div id="next" title="Siguiente" onclick="next();contMonedas()"></div>
+    <div id="next" title="Siguiente" onclick="next()"></div>
     <div
       id="back"
       title="Anterior"
@@ -292,7 +305,7 @@
       title="Panel de la Computadora Central."
       style="display: none"
     >
-      <p>Digita tu nombre completo para que tico te identifique</p>
+      <p>Digita tu nombre completo para que Tico te identifique</p>
       <input id="name_text" name="name_text" type="text" align="center" />
     </div>
   </body>

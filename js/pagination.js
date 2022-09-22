@@ -1,5 +1,15 @@
 // JavaScript Document
 
+var mon = 0;
+
+var storyContentPages = {
+  5: 2,
+
+  7: 1,
+
+  8: 12,
+};
+
 function next() {
   intro = false;
   $(".light, .activate").hide();
@@ -23,6 +33,11 @@ function next() {
             $(".name_user").html($("#name_text").val());
             if ($("#name_text").val() != "") {
               ocultdialog = true;
+              if (storyContentPages[current] != undefined) {
+                mon += storyContentPages[current];
+
+                document.getElementById("cont").innerHTML = "Monedas: " + mon;
+              }
             }
             $(".dialog_name").dialog("close");
           },
@@ -33,6 +48,12 @@ function next() {
       $(".light, .activate").fadeIn(500);
       $(".name_user").html($("#name_text").val());
     });
+
+    if (storyContentPages[current] != undefined && current > 5) {
+      mon += storyContentPages[current];
+
+      document.getElementById("cont").innerHTML = "Monedas: " + mon;
+    }
   });
   introFunc();
   $(".page" + current).fadeIn(1000);
@@ -52,24 +73,25 @@ function prev() {
     $(this).fadeIn(800, function () {
       $(".light, .activate").fadeIn(500);
     });
+
+    if (storyContentPages[current] != undefined && current >= 5) {
+      mon -= storyContentPages[current];
+
+      document.getElementById("cont").innerHTML = "Monedas: " + mon;
+    }
   });
   ubicarActual();
 }
 
 function ubicarActual() {
-
-  $(".musicContainer").css("position", "relative");
+  $(".musicContainer").css("position", "fixed");
   $(".musicContainer").css("display", "flex-end");
   $(".musicContainer").css("z-index", 999);
 
-  // $("#play").css("position", "relative");
   $("#play").css("display", "flex");
-  // $("#play").css("z-index", 999);
 
-  // $("#pause").css("position", "relative");
   $("#pause").css("display", "flex");
-  // $("#pause").css("z-index", 999);
-  
+
   if (current > 1) {
     $("#back").removeAttr("style");
   } else {
@@ -77,7 +99,7 @@ function ubicarActual() {
   }
 
   if (current >= 5 && current < 11) {
-    $("#monedas").css("position", "relative");
+    $("#monedas").css("position", "fixed");
     $("#monedas").css("display", "flex");
     $("#monedas").css("z-index", 999);
   } else {
@@ -97,3 +119,56 @@ function ubicarActual() {
   }
 }
 
+function changeColor() {
+  var azul = document.getElementById("colorAzul");
+  var morado = document.getElementById("colorMorado");
+  var amarillo = document.getElementById("colorAmarillo");
+  var gris = document.getElementById("colorGris");
+
+  var fondo = document.getElementById("backgroundNave");
+  var fondoAzul = document.getElementById("NaveAzul");
+  var fondoMorado = document.getElementById("NaveMorada");
+  var fondoAmarillo = document.getElementById("NaveAmarilla");
+  var fondoGris = document.getElementById("NaveGris");
+
+  azul.onclick = function () {
+    console.log("es azul");
+
+    fondo.style.display = "none";
+    fondoMorado.style.display = "none";
+    fondoAmarillo.style.display = "none";
+    fondoGris.style.display = "none";
+    fondoAzul.style.display = "flex";
+  };
+
+  morado.onclick = function () {
+    console.log("es morado");
+
+    fondo.style.display = "none";
+    fondoAzul.style.display = "none";
+    fondoAmarillo.style.display = "none";
+    fondoGris.style.display = "none";
+    fondoMorado.style.display = "flex";
+
+  };
+
+  amarillo.onclick = function () {
+    console.log("es amarillo");
+
+    fondo.style.display = "none";
+    fondoAzul.style.display = "none";
+    fondoMorado.style.display = "none";
+    fondoGris.style.display = "none";
+    fondoAmarillo.style.display = "flex";
+  };
+
+  gris.onclick = function () {
+    console.log("es gris");
+
+    fondo.style.display = "none";
+    fondoAzul.style.display = "none";
+    fondoMorado.style.display = "none";
+    fondoAmarillo.style.display = "none";
+    fondoGris.style.display = "flex";
+  };
+}
