@@ -6,7 +6,8 @@ var storyContentPages = {
   5: 2,
   6: 2,
   7: 0,
-  9: 5,
+  9: 10,
+  11: 6
 };
 
 function next() {
