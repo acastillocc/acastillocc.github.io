@@ -4,10 +4,9 @@ var mon = 0;
 
 var storyContentPages = {
   5: 2,
-
-  7: 1,
-
-  8: 12,
+  6: 2,
+  7: 0,
+  9: 5,
 };
 
 function next() {
@@ -56,6 +55,7 @@ function next() {
     }
   });
   introFunc();
+  console.log(current);
   $(".page" + current).fadeIn(1000);
   ubicarActual();
 }
@@ -79,6 +79,9 @@ function prev() {
 
       document.getElementById("cont").innerHTML = "Monedas: " + mon;
     }
+
+    storyContentPages[current] = current == 7 && 0;
+    console.log(current);
   });
   ubicarActual();
 }
@@ -98,7 +101,7 @@ function ubicarActual() {
     $("#back").css("display", "none");
   }
 
-  if (current >= 5 && current < 11) {
+  if (current >= 5 && current <= 11) {
     $("#monedas").css("position", "fixed");
     $("#monedas").css("display", "flex");
     $("#monedas").css("z-index", 999);
@@ -112,63 +115,111 @@ function ubicarActual() {
     $("#next").css("display", "none");
   }
 
-  if (document.getElementById("next").style.display === "none") {
-    $("#content").css("display", "none");
-  } else {
-    $("#content").css("display", "block");
+  if(current == 11) {
+    $('#button-diploma').css("display", "flex");
+
   }
+  // var botonDiploma = document.getElementById("button-diploma");
+  // var diploma = document.getElementById("diplomaContainer");
+
+  // botonDiploma.onclick = function () {
+  //   $('#diplomaContainer').css("display", "flex");
+  //   var nombre = document.getElementById("name_text").value;
+  //   var edad = document.getElementById("age_text").value;
+  //   $("#content").css("display", "none");
+  //   $("#button-diploma").css("display", "none");
+  //   $("#monedas").css("display", "none");
+  //   $("#play").css("display", "none");
+  //   $("#pause").css("display", "none");
+
+  //   document.getElementById('nombre').innerHTML = nombre;
+  //   document.getElementById('edad').innerHTML = edad;
+
+  //   console.log(nombre, " " + edad);
+  // };
+
+  // if (document.getElementById("next").style.display === "none") {
+  //   $("#content").css("display", "none");
+  // } else {
+  //   $("#content").css("display", "block");
+  // }
 }
+
+$(document).on("ready", function () {
+  $("#content").on("click", "#checkgroup input", function (e) {
+    if ($(e.target).is(":checked")) {
+      mon = mon + Number(e.target.value);
+      storyContentPages[current] =
+        storyContentPages[current] + Number(e.target.value);
+    } else {
+      mon = mon - Number(e.target.value);
+      storyContentPages[current] =
+        storyContentPages[current] - Number(e.target.value);
+    }
+    document.getElementById("cont").innerHTML = "Monedas: " + mon;
+  });
+});
 
 function changeColor() {
   var azul = document.getElementById("colorAzul");
   var morado = document.getElementById("colorMorado");
   var amarillo = document.getElementById("colorAmarillo");
   var gris = document.getElementById("colorGris");
+  var sinColor = document.getElementById("imagenSinColor");
 
   var fondo = document.getElementById("backgroundNave");
   var fondoAzul = document.getElementById("NaveAzul");
   var fondoMorado = document.getElementById("NaveMorada");
   var fondoAmarillo = document.getElementById("NaveAmarilla");
   var fondoGris = document.getElementById("NaveGris");
+  var sinFondo = document.getElementById("sinColor");
 
   azul.onclick = function () {
-    console.log("es azul");
-
     fondo.style.display = "none";
     fondoMorado.style.display = "none";
     fondoAmarillo.style.display = "none";
     fondoGris.style.display = "none";
+    sinFondo.style.display = "none";
     fondoAzul.style.display = "flex";
   };
 
   morado.onclick = function () {
-    console.log("es morado");
-
     fondo.style.display = "none";
     fondoAzul.style.display = "none";
     fondoAmarillo.style.display = "none";
     fondoGris.style.display = "none";
+    sinFondo.style.display = "none";
     fondoMorado.style.display = "flex";
-
   };
 
   amarillo.onclick = function () {
-    console.log("es amarillo");
-
     fondo.style.display = "none";
     fondoAzul.style.display = "none";
     fondoMorado.style.display = "none";
     fondoGris.style.display = "none";
+    sinFondo.style.display = "none";
     fondoAmarillo.style.display = "flex";
   };
 
   gris.onclick = function () {
-    console.log("es gris");
-
     fondo.style.display = "none";
     fondoAzul.style.display = "none";
     fondoMorado.style.display = "none";
     fondoAmarillo.style.display = "none";
+    sinFondo.style.display = "none";
     fondoGris.style.display = "flex";
   };
+
+  sinColor.onclick = function () {
+    fondo.style.display = "none";
+    fondoAzul.style.display = "none";
+    fondoMorado.style.display = "none";
+    fondoAmarillo.style.display = "none";
+    fondoGris.style.display = "none";
+    sinFondo.style.display = "flex";
+  };
+}
+
+function diplomaInfo() {
+
 }

@@ -1,10 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-.page11
-{
-	z-index: 1;
+.page11 {
+  z-index: 1;
 }
 
 .page11 .scene3
@@ -13,13 +11,11 @@
 	height: 100%;
 	width: 100%;
 	background-repeat: no-repeat;
-	z-index: 2;
+	z-index: 1;
 	min-height: 350px;
 	min-width: 550px;
-	background-image: url(../files/pag10/nave.png);
-	background-position: center center;
+	background-image: url(../files/pag9/Tico.jpg);
+	background-position: right center;
+	background-size:cover;
 }
 
-#content{
-	display: none;
-}

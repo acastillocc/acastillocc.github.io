@@ -1,0 +1,25 @@
+body{
+    background-color: bisque;
+}
+.diplomaContainer{
+    display: flex;
+    justify-content: center;
+}
+#diploma{
+    display: flex;
+    z-index: 2;
+    justify-content: center;
+    width: 80vw;
+    height: 97vh;
+    background-image: url(/files/diploma.jpg);
+    background-repeat: no-repeat;
+    
+}
+
+#nombre{
+    background-color: aquamarine;
+    position: absolute;
+    width: 40vw;
+    height: 10vh;
+    z-index: 3;
+}

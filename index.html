@@ -1,27 +1,71 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Seleccion de cuentos - Psicoliteratura</title>
-<link href="css/general.css" rel="stylesheet" type="text/css" />
-<link href="css/jquery-ui-1.8.24.custom.css" rel="stylesheet" type="text/css" />
-<link href="css/simple_tooltip.css" rel="stylesheet" type="text/css" />
-<link rel="icon" type="image/png" href="/files/pag10/nave.png" />
-<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.8.24.custom.min.js"></script>
-<script type="text/javascript" src="js/simple_tool_tip.js"></script>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Seleccion de cuentos - Psicoliteratura</title>
+    <link href="css/general.css" rel="stylesheet" type="text/css" />
+    <link
+      href="css/jquery-ui-1.8.24.custom.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="css/simple_tooltip.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="/files/pag10/nave.png" />
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/jquery-ui-1.8.24.custom.min.js"
+    ></script>
+    <script type="text/javascript" src="js/simple_tool_tip.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function (e) {
+        simple_tooltip("have_tooltip", "tooltipp");
+      });
+    </script>
+  </head>
+
+  <body>
+    <audio id="intro" autoplay>
+      <source src="./files/tico.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      var music = document.getElementById("intro");
+      music.volume = 0.5;
+
+      function playAudio() {
+        music.play();
+      }
+
+      function pauseAudio() {
+        music.pause();
+      }
+    </script>
+
 <script type="text/javascript">
-$(document).ready(function(e) {
-    simple_tooltip("have_tooltip","tooltipp");
-});
+  $(window).load(function () {
+    // Una vez se cargue al completo la página desaparecerá el div "loader"
+    $("#div_loader").fadeOut(400, function () {
+      $("#img_loader").hide();
+      $("#loader").fadeOut(600, function () {
+        $("#loader").remove();
+        $("#img_loader").remove();
+        $("#div_loader").remove();
+
+      });
+    });
+  });
 </script>
-</head>
 
-<body>
-<div class="info content">Selecciona tu cuento, e inicia una genial historia!...</div>
-<div class="wrapper">
-  <div class="cuento tico"><a href="tico.html"></a></div>
-</div>
+    <img id="img_loader" src="files/img_loader.png" />
+    <div id="div_loader">Cargando Historia...</div>
+    <div id="loader"></div>
 
-</body>
+    <div class="info content">
+      Selecciona tu cuento, e inicia una genial historia!...
+    </div>
+    <div class="wrapper">
+      <div class="cuento tico"><a href="tico.html"></a></div>
+    </div>
+  </body>
 </html>

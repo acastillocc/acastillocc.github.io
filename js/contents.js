@@ -1,11 +1,11 @@
 // JavaScript Document
-var crop = 10;
+var crop = 12;
 var intro = false;
 var current = 1;
-var pageTotale = 12;
-var textPage = new Array(10);
-var interactionPage1 = new Array(10);
-var interactionPage2 = new Array(10);
+var pageTotale = 11;
+var textPage = new Array(11);
+var interactionPage1 = new Array(11);
+var interactionPage2 = new Array(11);
 var ocultdialog = false;
 textPage[1] =
   "<span class='icone'></span>" +
@@ -15,7 +15,8 @@ textPage[1] =
   " de su cumpleaños; aquel día Tico se levantó muy temprano," +
   " empacó su robot que tiene como mascota, varios juguetes y se" +
   " despidió de su mamá, muy emocionado, ya que por fin cumpliría" +
-  " el sueño de viajar con su papá al planeta Mercurio.</p>";
+  " el sueño de viajar con su papá al planeta Mercurio.</p> <br> <br> <br> <br> <br>" +
+  "<p style='font-size:14px'> ¡Dale click al interruptor para encender o apagar las luces! </p>";
 textPage[2] =
   "<p>Sería un viaje fantástico, emocionante y muy tranquilo – pensó Tico" +
   " – seguramente como todos lo que había compartido con su papá.</p>" +
@@ -49,48 +50,53 @@ textPage[5] =
   " <span class='name_user' style='color: red'></span>;</p><p>aunque por varios minutos no podía" +
   " creer lo que veían sus ojos, descubrió que era verdad que había niños" +
   " terrícolas, y uno de ellos más especial todavía.</p>";
-textPage[6] = "";
+textPage[6] =
+  "Pídele a tus amigos, conocidos o familiares que te escriban una" +
+  " cualidad en cada color. Para que recuerdes que existen muchos" +
+  " seres como Tico que te consideran una persona única y admirable." +
+  "<form id='formCualidades' name='formCualidades' method='post' action=''><input type='text' name='textfield' id='textfield' style='border-color:#F33;'/><input type='text' name='textfield2' id='textfield2' style='border-color:#06F;' /><input type='text' name='textfield3' id='textfield3' style='border-color:#F93;' /><input type='text' name='textfield4' id='textfield4' style='border-color:#093;' />" +
+  "<input type='text' name='textfield5' id='textfield5' style='border-color:#903;' /><input type='text' name='textfield6' id='textfield6' style='border-color:#FC0;' /></form>";
 textPage[7] =
   "<p>Tico quiso saber quién era ese niño tan especial y descubrió con asombro a un niño muy:</p>" +
   "<form id='checkgroup' name='checkgroup' method='post' action=''>" +
   "<label style='background-color:#CCFFFF;border-color:#00CCFF;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_0'/>" +
+  "<input type='checkbox' name='inteligente' value='2' id='cualidades_0'/>" +
   "Inteligente</label>" +
   "<label style='background-color:#66FF66;border-color:#009933;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_1' />" +
+  "<input type='checkbox' name='entusiasta' value='1' id='cualidades_1' />" +
   "Entusiasta</label>" +
   "<label style='background-color:#FFCCFF;border-color:#FF9999;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_2' />" +
+  "<input type='checkbox' name='alegre' value='1' id='cualidades_2' />" +
   "Alegre</label>" +
   "<label style='background-color:#99CCCC;border-color:#0066FF;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_3' />" +
+  "<input type='checkbox' name='espontaneo' value='1' id='cualidades_3' />" +
   "Espontaneo</label>" +
   "<label style='background-color:#009966;border-color:#006600;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_4' />" +
+  "<input type='checkbox' name='amable' value='2' id='cualidades_4' />" +
   "Amable</label>" +
   "<label style='background-color:#CC99FF;border-color:#CC3399;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_5' />" +
+  "<input type='checkbox' name='sincero' value='1' id='cualidades_5' />" +
   "Sincero</label>" +
   "<label style='background-color:#FFCC66;border-color:#FF9900;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_6' />" +
+  "<input type='checkbox' name='activo' value='1' id='cualidades_6' />" +
   "Activo</label>" +
   "<label style='background-color:#FF6666;border-color:#CC0000;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_7' />" +
+  "<input type='checkbox' name='deportista' value='1' id='cualidades_7' />" +
   "Deportista</label>" +
   "<label style='background-color:#FFFF66;border-color:#FFCC00;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_8' />" +
+  "<input type='checkbox' name='lector' value='1' id='cualidades_8' />" +
   "Lector</label>" +
   "<label style='background-color:#66FFFF;border-color:#0099CC;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_9' />" +
+  "<input type='checkbox' name='expresivo' value='1' id='cualidades_9' />" +
   "Expresivo</label>" +
   "<label style='background-color:#9933FF;border-color:#990066;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_10' />" +
+  "<input type='checkbox' name='estudioso' value='1' id='cualidades_10' />" +
   "Estudioso</label>" +
   "<label style='background-color:#FFFFFF;border-color:#999999;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_11' />" +
+  "<input type='checkbox' name='obediente' value='1' id='cualidades_11' />" +
   "Obediente</label>" +
   "<label style='background-color:#009966;border-color:#003300;'>" +
-  "<input type='checkbox' name='cualidades' value='casilla de verificación ' id='cualidades_12' />" +
+  "<input type='checkbox' name='solidario' value='1' id='cualidades_12' />" +
   "Solidario</label>" +
   "</form>" +
   "<div class='info'>Pídele a tus padres o personas con quienes compartes que te marquen" +
@@ -116,24 +122,20 @@ textPage[9] =
   " la Tierra, y al descubrir a <span class='name_user' style='color: red'></span></p>";
 textPage[10] =
   " <p> A Tico le encantaría que personalizaras su nave espacial. </p>" +
-  " ¡Ayúdalo a que se vea mejor! </p>"  +
+  " ¡Ayúdalo a que se vea mejor! </p>" +
   " <p> Selecciona el color que te gustaría para pintar la nave espacial de Tico. </p> <br> <br>" +
-  " <img id='colorAzul' src='../files/pag10/colorAzul.png' onclick='changeColor()'>"+
-  " <img id='colorMorado' src='../files/pag10/colorMorado.png'>" +
-  " <img id='colorAmarillo' src='../files/pag10/colorAmarillo.png'>" +
-  " <img id='colorGris' src='../files/pag10/colorGris.png'>" +
-  " <img id='sinColor' src='../files/pag10/sinColor.png'>";
-  
+  " <img id='colorAzul' src='../files/pag10/colorAzul.png' onclick='changeColor()'>" +
+  " <img id='colorMorado' src='../files/pag10/colorMorado.png' onclick='changeColor()'>" +
+  " <img id='colorAmarillo' src='../files/pag10/colorAmarillo.png' onclick='changeColor()'>" +
+  " <img id='colorGris' src='../files/pag10/colorGris.png' onclick='changeColor()'>" +
+  " <img id='imagenSinColor' src='../files/pag10/sinColor.png' onclick='changeColor()'>";
 
 textPage[11] =
-  "Pídele a tus amigos, conocidos o familiares que te escriban una" +
-  " cualidad en cada color. Para que recuerdes que existen muchos" +
-  " seres como Tico que te consideran una persona única y admirable." +
-  "<form id='formCualidades' name='formCualidades' method='post' action=''><input type='text' name='textfield' id='textfield' style='border-color:#F33;'/><input type='text' name='textfield2' id='textfield2' style='border-color:#06F;' /><input type='text' name='textfield3' id='textfield3' style='border-color:#F93;' /><input type='text' name='textfield4' id='textfield4' style='border-color:#093;' />" +
-  "<input type='text' name='textfield5' id='textfield5' style='border-color:#903;' /><input type='text' name='textfield6' id='textfield6' style='border-color:#FC0;' /></form>" +
-  "<a href='index.html' class='button-finalizar'>Finalizar esta historia!</a>";
-
-textPage[12] = "";
+  "<p>¡Haz finalizado la historia! </p> " +
+  "<p> ¡Te felicitamos por completarla, gracias por esta aventura única" +
+  " con Tico el Marcianito! <br>" +
+  " Por tu gran esfuerzo, recibiriás un diploma muy especial por haber completado la historia" ;
+  // "<a  id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi diploma!</a>";
 
 interactionPage1[1] = "80% 50%";
 interactionPage2[1] = "20% 50%";

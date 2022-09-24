@@ -2,7 +2,7 @@
 /* CSS Document */
 
 .page10 {
-  z-index: 1;
+  z-index: 2;
 }
 
 #backgroundNave {
@@ -65,18 +65,36 @@
   background-position: center center;
 }
 
+#sinColor{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  z-index: 2;
+  min-height: 350px;
+  min-width: 550px;
+  background-image: url(../files/pag10/NaveSinColor.png);
+  background-position: center center;
+}
+
 #colorAzul,
 #colorMorado,
 #colorAmarillo,
 #colorGris,
-#sinColor {
+#imagenSinColor {
   width: 5vw;
   padding-right: 20px;
   cursor: pointer;
   transition: all 0.2s ease-in
 }
 
-#colorAzul:hover, #colorMorado:hover, #colorAmarillo:hover, #colorGris:hover {
+#imagenSinColor{
+  padding: 20px 0px 0px 10px;
+}
+
+#colorAzul:hover, #colorMorado:hover, #colorAmarillo:hover, #colorGris:hover{
   transform: scale(0.8) rotate(6deg) translateX(0px) translateY(0px);
   transition: all 0.2s ease-in;
 }
+
+

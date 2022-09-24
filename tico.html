@@ -56,6 +56,7 @@
     var image21 = $("<img />").attr("src", "files/pag8/marco.png");
     var image22 = $("<img />").attr("src", "files/pag9/Tico.jpg");
     var image23 = $("<img />").attr("src", "files/pag10/navebw.png");
+    var imagelast = $("<img />").attr("src", "files/pag11/Tico.jpg");
     var image24 = $("<img />").attr("src", "files/back.png");
     var image25 = $("<img />").attr("src", "files/next.png");
     var image26 = $("<img />").attr("src", "files/back-active.png");
@@ -230,19 +231,21 @@
     <div class="page page10" style="display: none">
       <div class="info content">Esta es la nave que Tico dibujo para ti!</div>
       <div id="backgroundNave"></div>
-      <div id="NaveAzul" style="display:none;"></div>
-      <div id="NaveMorada" style="display:none;"></div>
-      <div id="NaveAmarilla" style="display:none;"></div>
-      <div id="NaveGris" style="display:none;"></div>
-      <div id="sinColor" style="display:none;"></div>
-
+      <div id="NaveAzul" style="display: none"></div>
+      <div id="NaveMorada" style="display: none"></div>
+      <div id="NaveAmarilla" style="display: none"></div>
+      <div id="NaveGris" style="display: none"></div>
+      <div id="sinColor" style="display: none"></div>
     </div>
 
     <div class="page page11" style="display: none">
-      <div class="scene2">
-        <div class="info content">¡Danos una calificación!</div>
+        <div class="scene3"></div>
       </div>
     </div>
+
+    <a href='/files/diploma.jpg' download id='button-diploma' onclick='diplomaInfo()' style="display: none;">¡Quiero mi diploma!</a>
+
+
 
     <div class="containerMonedas">
       <div id="monedas" style="display: none">
@@ -282,7 +285,7 @@
 
     <script>
       var music = document.getElementById("music");
-      music.volume = 0.2;
+      music.volume = 0.13;
 
       function playAudio() {
         music.play();
@@ -307,6 +310,9 @@
     >
       <p>Digita tu nombre completo para que Tico te identifique</p>
       <input id="name_text" name="name_text" type="text" align="center" />
+
+      <p>Cuéntale a Tico cuántos años tienes</p>
+      <input id="age_text" name="age_text" type="number" align="center" />
     </div>
   </body>
 </html>

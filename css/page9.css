@@ -4,7 +4,7 @@
 
 .page9
 {
-	z-index: 2;
+	z-index: 3;
 }
 
 .page9 .scene3
@@ -13,7 +13,7 @@
 	height: 100%;
 	width: 100%;
 	background-repeat: no-repeat;
-	z-index: 2;
+	z-index: 3;
 	min-height: 350px;
 	min-width: 550px;
 	background-image: url(../files/pag9/Tico.jpg);
