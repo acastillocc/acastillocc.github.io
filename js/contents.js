@@ -60,43 +60,43 @@ textPage[7] =
   "<p>Tico quiso saber quién era ese niño tan especial y descubrió con asombro a un niño muy:</p>" +
   "<form id='checkgroup' name='checkgroup' method='post' action=''>" +
   "<label style='background-color:#CCFFFF;border-color:#00CCFF;'>" +
-  "<input type='checkbox' name='inteligente' value='2' id='cualidades_0'/>" +
+  "<input type='checkbox' name='inteligente' value='5' id='cualidades_0'/>" +
   "Inteligente</label>" +
   "<label style='background-color:#66FF66;border-color:#009933;'>" +
-  "<input type='checkbox' name='entusiasta' value='1' id='cualidades_1' />" +
+  "<input type='checkbox' name='entusiasta' value='4' id='cualidades_1' />" +
   "Entusiasta</label>" +
   "<label style='background-color:#FFCCFF;border-color:#FF9999;'>" +
-  "<input type='checkbox' name='alegre' value='1' id='cualidades_2' />" +
+  "<input type='checkbox' name='alegre' value='4' id='cualidades_2' />" +
   "Alegre</label>" +
   "<label style='background-color:#99CCCC;border-color:#0066FF;'>" +
-  "<input type='checkbox' name='espontaneo' value='1' id='cualidades_3' />" +
+  "<input type='checkbox' name='espontaneo' value='4' id='cualidades_3' />" +
   "Espontaneo</label>" +
   "<label style='background-color:#009966;border-color:#006600;'>" +
-  "<input type='checkbox' name='amable' value='2' id='cualidades_4' />" +
+  "<input type='checkbox' name='amable' value='5' id='cualidades_4' />" +
   "Amable</label>" +
   "<label style='background-color:#CC99FF;border-color:#CC3399;'>" +
-  "<input type='checkbox' name='sincero' value='1' id='cualidades_5' />" +
+  "<input type='checkbox' name='sincero' value='4' id='cualidades_5' />" +
   "Sincero</label>" +
   "<label style='background-color:#FFCC66;border-color:#FF9900;'>" +
-  "<input type='checkbox' name='activo' value='1' id='cualidades_6' />" +
+  "<input type='checkbox' name='activo' value='4' id='cualidades_6' />" +
   "Activo</label>" +
   "<label style='background-color:#FF6666;border-color:#CC0000;'>" +
-  "<input type='checkbox' name='deportista' value='1' id='cualidades_7' />" +
+  "<input type='checkbox' name='deportista' value='4' id='cualidades_7' />" +
   "Deportista</label>" +
   "<label style='background-color:#FFFF66;border-color:#FFCC00;'>" +
-  "<input type='checkbox' name='lector' value='1' id='cualidades_8' />" +
+  "<input type='checkbox' name='lector' value='4' id='cualidades_8' />" +
   "Lector</label>" +
   "<label style='background-color:#66FFFF;border-color:#0099CC;'>" +
-  "<input type='checkbox' name='expresivo' value='1' id='cualidades_9' />" +
+  "<input type='checkbox' name='expresivo' value='4' id='cualidades_9' />" +
   "Expresivo</label>" +
   "<label style='background-color:#9933FF;border-color:#990066;'>" +
-  "<input type='checkbox' name='estudioso' value='1' id='cualidades_10' />" +
+  "<input type='checkbox' name='estudioso' value='4' id='cualidades_10' />" +
   "Estudioso</label>" +
   "<label style='background-color:#FFFFFF;border-color:#999999;'>" +
-  "<input type='checkbox' name='obediente' value='1' id='cualidades_11' />" +
+  "<input type='checkbox' name='obediente' value='4' id='cualidades_11' />" +
   "Obediente</label>" +
   "<label style='background-color:#009966;border-color:#003300;'>" +
-  "<input type='checkbox' name='solidario' value='1' id='cualidades_12' />" +
+  "<input type='checkbox' name='solidario' value='4' id='cualidades_12' />" +
   "Solidario</label>" +
   "</form>" +
   "<div class='info'>Pídele a tus padres o personas con quienes compartes que te marquen" +
@@ -134,8 +134,9 @@ textPage[11] =
   "<p>¡Haz finalizado la historia! </p> " +
   "<p> ¡Te felicitamos por completarla, gracias por esta aventura única" +
   " con Tico el Marcianito! <br>" +
-  " Por tu gran esfuerzo, recibiriás un diploma muy especial por haber completado la historia" ;
-  // "<a  id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi diploma!</a>";
+  " Por tu gran esfuerzo, recibiriás un diploma muy especial por haber completado la historia <br> <br> <br>" +
+  // "<a href='/files/diploma.jpg' download id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi diploma!</a>";
+  "<a  id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi diploma!</a>";
 
 interactionPage1[1] = "80% 50%";
 interactionPage2[1] = "20% 50%";
@@ -149,39 +150,3 @@ interactionPage2[3] = "100% 50%";
 interactionPage1[4] = "50% 50%";
 interactionPage2[4] = "100% 50%";
 
-// function contMonedas() {
-//   var mon = 0;
-
-//   if ($("#name_text").val() != "") {
-//     mon += 2;
-//   }
-//   if ($("#inputHeroe").val() != "") {
-//     mon += 5;
-//   }
-//   } else {
-//     mon = mon;
-//   }
-
-//   if ($("#inputMusica").val() != "") {
-//     mon = mon + 5;
-//   } else {
-//     mon = mon;
-//   }
-
-//   if ($("#inputAnimal").val() != "") {
-//     mon = mon + 5;
-//   } else {
-//     mon = mon;
-//   }
-
-//   if ($("#inputDeportista").val() != "") {
-//     mon = mon + 5;
-//   } else {
-//     mon = mon;
-//   }
-
-//   var contMonedas = (document.getElementById("cont").innerHTML =
-//     "Monedas: " + mon);
-
-//   console.log(contMonedas);
-// }
