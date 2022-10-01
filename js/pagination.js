@@ -3,11 +3,10 @@
 var mon = 0;
 
 var storyContentPages = {
-  5: 2,
+  5: 6,
   6: 2,
   7: 0,
   9: 10,
-  11: 6
 };
 
 function next() {
@@ -103,9 +102,8 @@ function ubicarActual() {
   }
 
   if (current >= 5 && current <= 11) {
-    $("#monedas").css("position", "fixed");
+    // $("#monedas").css("position", "fixed");
     $("#monedas").css("display", "flex");
-    $("#monedas").css("z-index", 999);
   } else {
     $("#monedas").css("display", "none");
   }
@@ -116,34 +114,6 @@ function ubicarActual() {
     $("#next").css("display", "none");
   }
 
-  if(current == 11) {
-    $('#button-diploma').css("display", "flex");
-
-  }
-  // var botonDiploma = document.getElementById("button-diploma");
-  // var diploma = document.getElementById("diplomaContainer");
-
-  // botonDiploma.onclick = function () {
-  //   $('#diplomaContainer').css("display", "flex");
-  //   var nombre = document.getElementById("name_text").value;
-  //   var edad = document.getElementById("age_text").value;
-  //   $("#content").css("display", "none");
-  //   $("#button-diploma").css("display", "none");
-  //   $("#monedas").css("display", "none");
-  //   $("#play").css("display", "none");
-  //   $("#pause").css("display", "none");
-
-  //   document.getElementById('nombre').innerHTML = nombre;
-  //   document.getElementById('edad').innerHTML = edad;
-
-  //   console.log(nombre, " " + edad);
-  // };
-
-  // if (document.getElementById("next").style.display === "none") {
-  //   $("#content").css("display", "none");
-  // } else {
-  //   $("#content").css("display", "block");
-  // }
 }
 
 $(document).on("ready", function () {
@@ -175,7 +145,12 @@ function changeColor() {
   var fondoGris = document.getElementById("NaveGris");
   var sinFondo = document.getElementById("sinColor");
 
+  if ($("NaveAzul").css("display", "flex")) {
+    mon += 3;
+  }
+
   azul.onclick = function () {
+    document.getElementById("cont").innerHTML = "Monedas: " + mon;
     fondo.style.display = "none";
     fondoMorado.style.display = "none";
     fondoAmarillo.style.display = "none";
@@ -222,5 +197,62 @@ function changeColor() {
 }
 
 function diplomaInfo() {
+  $(".diplomaHide").css("display", "none");
+  $(".diplomaContainer").css("display", "flex");
 
+  var nombre = document.getElementById("name_text").value;
+  var edad = document.getElementById("age_text").value;
+  document.getElementById("nombre").innerHTML = nombre;
+  document.getElementById("edad").innerHTML = edad;
 }
+
+function getPDF() {
+  var nombre = document.getElementById("name_text").value;
+  var edad = document.getElementById("age_text").value;
+  document.getElementById("nombre").innerHTML = nombre;
+  document.getElementById("edad").innerHTML = edad;
+  var HTML_Width = $("#diploma").width();
+  var HTML_Height = $("#diploma").height();
+  var top_left_margin = 15;
+  var PDF_Width = HTML_Width + top_left_margin * 2;
+  var PDF_Height = PDF_Width * 1.5 + top_left_margin * 2;
+  var canvas_image_width = HTML_Width;
+  var canvas_image_height = HTML_Height;
+
+  var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+  html2canvas($("#diploma")[0], { allowTaint: true }).then(function (
+    canvas
+  ) {
+    canvas.getContext("2d");
+
+    console.log(canvas.height + "  " + canvas.width);
+
+    var imgData = canvas.toDataURL("image/jpeg", 1.0);
+    var pdf = new jsPDF("p", "pt", [PDF_Width, PDF_Height]);
+    pdf.addImage(
+      imgData,
+      "JPG",
+      top_left_margin,
+      top_left_margin,
+      canvas_image_width,
+      canvas_image_height
+    );
+
+    for (var i = 1; i <= totalPDFPages; i++) {
+      pdf.addPage(PDF_Width, PDF_Height);
+      pdf.addImage(
+        imgData,
+        "JPG",
+        top_left_margin,
+        -(PDF_Height * i) + top_left_margin * 4,
+        canvas_image_width,
+        canvas_image_height
+      );
+    }
+
+    pdf.save("Diploma de " + nombre + ".pdf");
+  });
+}
+
+
