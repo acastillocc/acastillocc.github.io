@@ -17,6 +17,8 @@
       src="js/jquery-ui-1.8.24.custom.min.js"
     ></script>
     <script type="text/javascript" src="js/simple_tool_tip.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script type="text/javascript">
       $(document).ready(function (e) {
         simple_tooltip("have_tooltip", "tooltipp");
@@ -25,41 +27,39 @@
   </head>
 
   <body>
-    <audio id="intro" autoplay>
-      <source src="./files/tico.mp3" type="audio/mpeg" />
-    </audio>
-
-    <script>
-      var music = document.getElementById("intro");
-      music.volume = 0.5;
-
-      function playAudio() {
-        music.play();
-      }
-
-      function pauseAudio() {
-        music.pause();
-      }
-    </script>
-
-<script type="text/javascript">
-  $(window).load(function () {
-    // Una vez se cargue al completo la página desaparecerá el div "loader"
-    $("#div_loader").fadeOut(400, function () {
-      $("#img_loader").hide();
-      $("#loader").fadeOut(600, function () {
-        $("#loader").remove();
-        $("#img_loader").remove();
-        $("#div_loader").remove();
-
+    <script type="text/javascript">
+      $(window).load(function () {
+        // Una vez se cargue al completo la página desaparecerá el div "loader"
+        $("#div_loader").fadeOut(400, function () {
+          $("#img_loader").hide();
+          $("#loader").fadeOut(600, function () {
+            $("#loader").remove();
+            $("#img_loader").remove();
+            $("#div_loader").remove();
+          });
+        });
       });
-    });
-  });
-</script>
+    </script>
 
     <img id="img_loader" src="files/img_loader.png" />
     <div id="div_loader">Cargando Historia...</div>
     <div id="loader"></div>
+
+    <script>
+      Swal.fire({
+        title: "<strong style='font-family:Calibri'>¡Bienvenido/a al cuento del Marcianito Tico!</strong>",
+        width: '60vw',
+        height: '1000vh',
+        heightAuto: false,
+        background: '#99C4EA',
+        color: 'black',
+        border: true,
+        html: '<iframe width="560" height="315" src="/files/Tico_introducción.mp4" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>',
+        showCloseButton: true,
+        focusConfirm: true,
+        
+      });
+    </script>
 
     <div class="info content">
       Selecciona el cuento para iniciar una genial historia!...
