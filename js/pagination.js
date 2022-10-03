@@ -4,7 +4,6 @@ var mon = 0;
 
 var storyContentPages = {
   5: 6,
-  6: 2,
   7: 0,
   9: 10,
 };
@@ -113,7 +112,6 @@ function ubicarActual() {
   } else {
     $("#next").css("display", "none");
   }
-
 }
 
 $(document).on("ready", function () {
@@ -146,7 +144,7 @@ function changeColor() {
   var sinFondo = document.getElementById("sinColor");
 
   if ($("NaveAzul").css("display", "flex")) {
-    mon += 3;
+    mon += 10;
   }
 
   azul.onclick = function () {
@@ -160,6 +158,7 @@ function changeColor() {
   };
 
   morado.onclick = function () {
+    document.getElementById("cont").innerHTML = "Monedas: " + mon;
     fondo.style.display = "none";
     fondoAzul.style.display = "none";
     fondoAmarillo.style.display = "none";
@@ -169,6 +168,7 @@ function changeColor() {
   };
 
   amarillo.onclick = function () {
+    document.getElementById("cont").innerHTML = "Monedas: " + mon;
     fondo.style.display = "none";
     fondoAzul.style.display = "none";
     fondoMorado.style.display = "none";
@@ -178,6 +178,7 @@ function changeColor() {
   };
 
   gris.onclick = function () {
+    document.getElementById("cont").innerHTML = "Monedas: " + mon;
     fondo.style.display = "none";
     fondoAzul.style.display = "none";
     fondoMorado.style.display = "none";
@@ -197,6 +198,7 @@ function changeColor() {
 }
 
 function diplomaInfo() {
+  var conteoFinal = document.getElementById("contFinal");
   $(".diplomaHide").css("display", "none");
   $(".diplomaContainer").css("display", "flex");
 
@@ -204,6 +206,7 @@ function diplomaInfo() {
   var edad = document.getElementById("age_text").value;
   document.getElementById("nombre").innerHTML = nombre;
   document.getElementById("edad").innerHTML = edad;
+  conteoFinal.innerHTML = "Total de Monedas: " + mon;
 }
 
 function getPDF() {
@@ -221,9 +224,7 @@ function getPDF() {
 
   var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
 
-  html2canvas($("#diploma")[0], { allowTaint: true }).then(function (
-    canvas
-  ) {
+  html2canvas($("#diploma")[0], { allowTaint: true }).then(function (canvas) {
     canvas.getContext("2d");
 
     console.log(canvas.height + "  " + canvas.width);
@@ -255,4 +256,48 @@ function getPDF() {
   });
 }
 
-
+function terminarCuento() {
+  if (mon >= 0 && mon <= 25) {
+    Swal.fire({
+      title: "<strong style='font-family:Calibri'>¡Ánimo!</strong>",
+      html: "<span> Ganaste " + mon +" monedas, ¡Juega de nuevo y anímate a hacer todas las actividades!</span>",
+      footer: "<strong style='font-family:Calibri'>Gracias por leer</strong>",
+      width: "60vw",
+      heightAuto: false,
+      background: "#99C4EA",
+      color: "black",
+      showCloseButton: true,
+      focusConfirm: true,
+    }).then(function () {
+      window.location.href = "index.html";
+    });
+  } else if (mon >= 26 && mon <= 52) {
+    Swal.fire({
+      title: "<strong style='font-family:Calibri'>¡Muy bien!</strong>",
+      html: "<span> Ganaste " + mon +" monedas. Hiciste un buen trabajo ¡casi terminas todas las actividades! ¡Anímate a jugar otra vez!</span>",
+      footer: "<strong style='font-family:Calibri'>Gracias por leer</strong>",
+      width: "60vw",
+      heightAuto: false,
+      background: "#99C4EA",
+      color: "black",
+      showCloseButton: true,
+      focusConfirm: true,
+    }).then(function () {
+      window.location.href = "index.html";
+    });
+  } else if (mon > 52){
+    Swal.fire({
+      title: "<strong style='font-family:Calibri'>¡Excelente trabajo!</strong>",
+      html: "<span> Ganaste " + mon +" monedas, ¡FELICITACIONES! Has alcanzado el máximo puntaje, ¡Eres muy especial!</span>",
+      footer: "<strong style='font-family:Calibri'>Gracias por leer</strong>",
+      width: "60vw",
+      heightAuto: false,
+      background: "#99C4EA",
+      color: "black",
+      showCloseButton: true,
+      focusConfirm: true,
+    }).then(function () {
+      window.location.href = "index.html";
+    });
+  }
+}
