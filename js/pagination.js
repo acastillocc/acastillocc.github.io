@@ -89,9 +89,7 @@ function ubicarActual() {
   $(".musicContainer").css("position", "fixed");
   $(".musicContainer").css("display", "flex-end");
   $(".musicContainer").css("z-index", 999);
-
   $("#play").css("display", "flex");
-
   $("#pause").css("display", "flex");
 
   if (current > 1) {
