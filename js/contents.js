@@ -16,7 +16,7 @@ textPage[1] =
   " empacó su robot que tiene como mascota, varios juguetes y se" +
   " despidió de su mamá, muy emocionado, ya que por fin cumpliría" +
   " el sueño de viajar con su papá al planeta Mercurio.</p> <br> <br> <br> <br> <br>" +
-  "<p style='font-size:14px'> ¡Dale click al interruptor para encender o apagar las luces! </p>";
+  "<p style='font-size:19px'> ¡Dale click al interruptor para encender o apagar las luces! </p>";
 textPage[2] =
   "<p>Sería un viaje fantástico, emocionante y muy tranquilo – pensó Tico" +
   " – seguramente como todos lo que había compartido con su papá.</p>" +
@@ -98,20 +98,26 @@ textPage[7] =
   "<label style='background-color:#009966;border-color:#003300;'>" +
   "<input type='checkbox' name='solidario' value='4' id='cualidades_12' />" +
   "Solidario</label>" +
+  "<label style='background-color:lightgreen;border-color:#003300;'>" +
+  "<input type='checkbox' name='cariñoso' value='4' id='cualidades_13' />" +
+  "Cariñoso</label>" +
+  "<label style='background-color:turquoise;border-color:#003300;'>" +
+  "<input type='checkbox' name='amistoso' value='4' id='cualidades_14' />" +
+  "Amistoso</label>" +
   "</form>" +
-  "<div class='info'>Pídele a tus padres o personas con quienes compartes que te marquen" +
-  " tus cualidades.</div>" +
-  "<p>Además, era un niño al que le gustaba practicar varios deportes, entre ellos:</p>" +
+    "<p>Además, era un niño al que le gustaba practicar varios deportes, entre ellos:</p>" +
   "<textarea placeholder='Coloca el nombre de tus deportes favoritos'></textarea>";
 textPage[8] =
-  "<div style='display:table;margin:auto;width:90%'><p><input type='text' id='inputHeroe' placeholder='Y cuyo héroe es:' style='width:100%;height:30px;padding-left:8px;'/></p>" +
-  "<p><input type='text' id='inputMusica' placeholder='Su música favorita es:' style='width:100%;height:30px;padding-left:8px;'/></p>" +
-  "<p><input type='text'id='inputAnimal' placeholder='Su animal favorito es:' style='width:100%;height:30px;padding-left:8px;' /></p>" +
-  "<p><input type='text'id='inputDeportista' placeholder='Y su deportista preferido es:' style='width:100%;height:30px;padding-left:8px;' /></p></div>" +
   "<p>Muy emocionado, Tico se dispuso a escribir todo lo que había vivido" +
   " este día tan maravilloso; además, pensó que sería fantástico escribir" +
   " acerca de un niño tan especial; por eso cuando ya su papá había" +
-  " arreglado la nave espacial</p>";
+  " arreglado la nave espacial</p>" +
+  "<div class='info' style='font-size:20px;'>Escribe en los cuadros tus cosas favoritas" +
+  " </div>" +
+  "<div style='display:table;margin:auto;width:90%'><p><input type='text' id='inputHeroe' placeholder='Ahora escribe tu superhéroe favorito:' style='width:100%;height:30px;padding-left:8px;'/></p>" +
+  "<p><input type='text' id='inputMusica' placeholder='Escribe tu música favorita:' style='width:100%;height:30px;padding-left:8px;'/></p>" +
+  "<p><input type='text'id='inputAnimal' placeholder='Escribe tu animal preferido:' style='width:100%;height:30px;padding-left:8px;' /></p>" +
+  "<p><input type='text'id='inputDeportista' placeholder='Escribe tu deportista favorito:' style='width:100%;height:30px;padding-left:8px;' /></p></div>";
 textPage[9] =
   "<p>Tico había hecho un cuento y también un dibujo de su nave, el cual le enviaría a <span class='name_user' style='color: red'></span></p>" +
   "<p>Su papá, muy orgulloso de lo ingenioso que era su hijo Tico, decidió" +
@@ -131,11 +137,12 @@ textPage[10] =
   " <img id='imagenSinColor' src='../files/pag10/sinColor.png' onclick='changeColor()'>";
 
 textPage[11] =
-  "<p>¡Haz finalizado la historia! </p> " +
-  "<p> ¡Te felicitamos por completarla, gracias por esta aventura única" +
+  "<p style='font-size:24px;'>¡Felicitaciones "+
+  "<span class='name_user' style='color: red'></span>! </p> " +
+  "<p> ¡Haz terminado el cuento, gracias por esta aventura única" +
   " con Tico el Marcianito! <br>" +
-  " Por tu gran esfuerzo, recibiriás un diploma muy especial por haber completado la historia <br> <br> <br>" +
-  "<a  id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi diploma!</a>";
+  " Por tu gran esfuerzo, recibiriás un diploma muy especial <br> <br> <br>" +
+  "<a id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi diploma!</a>";
 
 interactionPage1[1] = "80% 50%";
 interactionPage2[1] = "20% 50%";
