@@ -118,7 +118,7 @@ textPage[9] =
   " ayudarlo a enviar la historia a <span class='name_user' style='color: red'></span>" +
   " antes de partir.</p>" +
   "<p>Cuando regresó a su planeta Marte, Tico contó a todo el mundo la" +
-  "aventura tan especial que vivió el día de su cumpleaños, al conocer" +
+  " aventura tan especial que vivió el día de su cumpleaños, al conocer" +
   " la Tierra, y al descubrir a <span class='name_user' style='color: red'></span></p>";
 textPage[10] =
   " <p> A Tico le encantaría que personalizaras su nave espacial. </p>" +
@@ -135,7 +135,6 @@ textPage[11] =
   "<p> ¡Te felicitamos por completarla, gracias por esta aventura única" +
   " con Tico el Marcianito! <br>" +
   " Por tu gran esfuerzo, recibiriás un diploma muy especial por haber completado la historia <br> <br> <br>" +
-  // "<a href='/files/diploma.jpg' download id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi diploma!</a>";
   "<a  id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi diploma!</a>";
 
 interactionPage1[1] = "80% 50%";
@@ -149,4 +148,3 @@ interactionPage2[3] = "100% 50%";
 
 interactionPage1[4] = "50% 50%";
 interactionPage2[4] = "100% 50%";
-
