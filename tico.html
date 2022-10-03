@@ -246,12 +246,10 @@
         <div class="scene3"></div>
       </div>
 
-      <!-- <a href='/files/diploma.jpg' download id='button-diploma' onclick='diplomaInfo();' style="display: none;">¡Quiero mi diploma!</a> -->
-
       <div class="containerMonedas">
         <div id="monedas" style="display: none">
           <img src="./files/moneda.png" alt="moneda" width="40" height="40" />
-          <span id="cont" style="font-size: 26px"></span>
+          <span id="cont" style="font-size: 26px">Monedas: </span>
         </div>
       </div>
 
@@ -259,6 +257,7 @@
         <div id="text" style="display: none"></div>
         <div id="footer"></div>
       </div>
+
       <div class="musicContainer">
         <div
           id="play"
@@ -320,6 +319,7 @@
     <!-- ------------DIPLOMA--------------- -->
     <div class="diplomaContainer" style="display: none">
       <div class="containerBotones">
+        <div id="contFinal"></div>
         <li class="imprimir" onclick="getPDF()">
           IMPRIMIR DIPLOMA
           <svg
@@ -360,27 +360,18 @@
             />
           </svg>
         </li>
+
+        <li class="reportePadres">
+          <a
+            href="#"
+            download="./files/ResultadosAnalisis.pdf"
+            style="color: black; text-decoration: none"
+            >REPORTE PARA PADRES</a
+          >
+        </li>
+
         <li class="ending" onclick="terminarCuento()">TERMINAR CUENTO</li>
-        <script>
-          function terminarCuento() {
-            Swal.fire({
-              title:
-                "<strong style='font-family:Calibri'>¡Excelente trabajo!</strong>",
-              footer: "<strong style='font-family:Calibri'>Gracias por leer</strong>",
-              width: "60vw",
-              height: "1000vh",
-              heightAuto: false,
-              background: "#99C4EA",
-              color: "black",
-              border: true,
-              // html: '<iframe width="560" height="315" src="/files/Tico_introducción.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>',
-              showCloseButton: true,
-              focusConfirm: true,
-            }).then(function () {
-              window.location.href = "index.html";
-            });
-          }
-        </script>
+        <script></script>
       </div>
       <div id="diploma">
         <img src="./files/diploma.jpg" />
