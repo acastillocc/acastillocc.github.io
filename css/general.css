@@ -2,11 +2,14 @@
 /* CSS Document */
 
 @font-face {
-  font-family: 'Bubblegum Sans';
+  font-family: "Bubblegum Sans";
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/bubblegumsans/v16/AYCSpXb_Z9EORv1M5QTjEzMEteaAxII.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/s/bubblegumsans/v16/AYCSpXb_Z9EORv1M5QTjEzMEteaAxII.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
 body,
@@ -263,6 +266,7 @@ div.info {
   margin-left: -125px;
   margin-top: -150px;
 }
+
 #div_loader {
   position: fixed;
   z-index: 9002;
@@ -277,6 +281,11 @@ div.info {
   margin-left: -65px;
   margin-top: 10px;
   text-shadow: 0px 1px 0px #7cdae2;
+}
+
+#buttonNarracion {
+  width: 20px;
+  height: 20px;
 }
 
 .wrapper {
@@ -342,10 +351,7 @@ div.info {
 #play,
 #pause {
   z-index: 999;
-  /* background-color: red; */
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
   object-fit: cover;
   opacity: 0.7;
   justify-content: center;
@@ -419,8 +425,7 @@ div.info {
 #cont {
   padding-left: 5px;
   font-size: 20px;
-  font-family: "Bubblegum Sans"
-
+  font-family: "Bubblegum Sans";
 }
 
 .diplomaContainer {
@@ -517,9 +522,8 @@ li:hover {
   border-style: dotted;
   font-size: 24px;
   font-family: "Bubblegum Sans";
-
 }
 
-.reportePadres img{
+.reportePadres img {
   box-shadow: 10px 10px 19px 2px #232323;
 }
