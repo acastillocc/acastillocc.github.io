@@ -4,7 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Marcianito Tico</title>
     <link rel="icon" type="image/png" href="/files/pag10/nave.png" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Bubblegum+Sans"
+    />
 
     <link href="css/general.css" rel="stylesheet" type="text/css" />
     <link href="css/page1.css" rel="stylesheet" type="text/css" />
@@ -252,6 +256,10 @@
           <img src="./files/moneda.png" alt="moneda" width="40" height="40" />
           <span id="cont" style="font-size: 26px">Monedas: </span>
         </div>
+
+        <div id="narracion" onclick="narracion()">
+          <input id="buttonNarracion" type="checkbox" style="size:20px">
+        </div>
       </div>
 
       <div id="content">
@@ -276,7 +284,7 @@
           type="button"
           style="display: none"
         >
-          <img src="/files/stop.png" />
+          <img src="/files/stop.png" alt="stopButton"/>
         </div>
       </div>
 
@@ -284,6 +292,56 @@
         <source src="./files/audioTico.mp3" type="audio/mpeg" />
       </audio>
 
+      <audio id="pag1" loop>
+        <source
+          src="./files/audios-narracion tico/pag1.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+
+      <audio id="pag2" loop>
+        <source
+          src="./files/audios-narracion tico/pag2.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+      <audio id="pag3" loop>
+        <source src="./files/audios-narracion tico/pag3.mp3" type="audio/mpeg" />
+      </audio>
+
+      <audio id="pag4" loop>
+        <source src="./files/audios-narracion tico/pag4.mp3" type="audio/mpeg" />
+      </audio>
+
+      <audio id="pag5" loop>
+        <source src="./files/audios-narracion tico/pag5.mp3" type="audio/mpeg" />
+      </audio>
+
+      <audio id="pag6" loop>
+        <source src="./files/audios-narracion tico/pag6.mp3" type="audio/mpeg" />
+      </audio>
+
+      <audio id="pag7" loop>
+        <source src="./files/audios-narracion tico/pag7.mp3" type="audio/mpeg" />
+      </audio>
+
+      <audio id="pag8" loop>
+        <source src="./files/audios-narracion tico/pag8.mp3" type="audio/mpeg" />
+      </audio>
+
+      <audio id="pag9" loop>
+        <source src="./files/audios-narracion tico/pag9.mp3" type="audio/mpeg" />
+      </audio>
+
+      <audio id="pag10" loop>
+        <source src="./files/audios-narracion tico/pag10.mp3" type="audio/mpeg" />
+      </audio>
+
+      <audio id="pag11" loop>
+        <source src="./files/audios-narracion tico/pag11.mp3" type="audio/mpeg" />
+      </audio>
+
+      <!--- SCRIPT AUDIOS --->
       <script>
         var music = document.getElementById("music");
         music.volume = 0.13;
@@ -295,6 +353,8 @@
         function pauseAudio() {
           music.pause();
         }
+
+        
       </script>
 
       <div id="next" title="Siguiente" onclick="next()"></div>
@@ -340,8 +400,13 @@
         </li>
 
         <li class="printTico">
-          <a href="/files/Personajes_recortar.png" download="Personajes_recortar.png" style="color: black; text-decoration: none">IMPRIMIR PERSONAJES</a>
-          <img alt="Personajes" src="/files/Personajes_recortar.png" style="display:none"/>
+          <a
+            href="/files/Personajes_recortar.png"
+            download="Personajes_recortar.png"
+            style="color: black; text-decoration: none"
+            >IMPRIMIR PERSONAJES</a
+          >
+          <img alt="Personajes" src="/files/Personajes_recortar.png" />
           <svg
             width="24"
             height="24"
