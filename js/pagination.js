@@ -10,6 +10,10 @@ var storyContentPages = {
 
 function next() {
   intro = false;
+  $("#pag" + current)
+    .get(0)
+    .pause();
+  $("#pag" + current).get(0).currentTime = 0;
   $(".light, .activate").hide();
   $(".page" + current).fadeOut(1000);
   current = current + 1;
@@ -61,6 +65,10 @@ function next() {
 
 function prev() {
   intro = false;
+  $("#pag" + current)
+    .get(0)
+    .pause();
+  $("#pag" + current).get(0).currentTime = 0;
   $(".light, .activate").hide();
   $(".page" + current).fadeOut(1000);
   current = current - 1;
@@ -89,8 +97,11 @@ function ubicarActual() {
   $(".musicContainer").css("position", "fixed");
   $(".musicContainer").css("display", "flex-end");
   $(".musicContainer").css("z-index", 999);
-  $("#play").css("display", "flex");
-  $("#pause").css("display", "flex");
+
+  if (current >= 1) {
+    $("#play").css("display", "flex");
+    $("#pause").css("display", "flex");
+  }
 
   if (current > 1) {
     $("#back").removeAttr("style");
@@ -126,6 +137,18 @@ $(document).on("ready", function () {
     document.getElementById("cont").innerHTML = "Monedas: " + mon;
   });
 });
+
+
+function narracion() {
+  var check = document.getElementById("buttonNarracion");
+  if (check.checked) {
+    console.log("página #" + current);
+    $("#pag" + current).get(0).play();
+  } else {
+    $("#pag" + current).get(0).pause();
+    $("#pag" + current).get(0).currentTime = 0;
+  }
+}
 
 function changeColor() {
   var azul = document.getElementById("colorAzul");
@@ -258,7 +281,10 @@ function terminarCuento() {
   if (mon >= 0 && mon <= 25) {
     Swal.fire({
       title: "<strong style='font-family:Calibri'>¡Ánimo!</strong>",
-      html: "<span> Ganaste " + mon +" monedas, ¡Juega de nuevo y anímate a hacer todas las actividades!</span>",
+      html:
+        "<span> Ganaste " +
+        mon +
+        " monedas, ¡Juega de nuevo y anímate a hacer todas las actividades!</span>",
       footer: "<strong style='font-family:Calibri'>Gracias por leer</strong>",
       width: "60vw",
       heightAuto: false,
@@ -272,7 +298,10 @@ function terminarCuento() {
   } else if (mon >= 26 && mon <= 52) {
     Swal.fire({
       title: "<strong style='font-family:Calibri'>¡Muy bien!</strong>",
-      html: "<span> Ganaste " + mon +" monedas. Hiciste un buen trabajo ¡casi terminas todas las actividades! ¡Anímate a jugar otra vez!</span>",
+      html:
+        "<span> Ganaste " +
+        mon +
+        " monedas. Hiciste un buen trabajo ¡casi terminas todas las actividades! ¡Anímate a jugar otra vez!</span>",
       footer: "<strong style='font-family:Calibri'>Gracias por leer</strong>",
       width: "60vw",
       heightAuto: false,
@@ -283,10 +312,13 @@ function terminarCuento() {
     }).then(function () {
       window.location.href = "index.html";
     });
-  } else if (mon > 52){
+  } else if (mon > 52) {
     Swal.fire({
       title: "<strong style='font-family:Calibri'>¡Excelente trabajo!</strong>",
-      html: "<span> Ganaste " + mon +" monedas, ¡FELICITACIONES! Has alcanzado el máximo puntaje, ¡Eres muy especial!</span>",
+      html:
+        "<span> Ganaste " +
+        mon +
+        " monedas, ¡FELICITACIONES! Has alcanzado el máximo puntaje, ¡Eres muy especial!</span>",
       footer: "<strong style='font-family:Calibri'>Gracias por leer</strong>",
       width: "60vw",
       heightAuto: false,
