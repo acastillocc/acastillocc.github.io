@@ -19,7 +19,7 @@ html {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-image: url(../files/fondo.jpg);
+  background-image: url(../files/img/fondo.jpg);
   background-repeat: repeat;
   background-position: center center;
 }
@@ -31,7 +31,7 @@ html {
 }
 
 #content {
-  background-image: url(../files/fondo.jpg);
+  background-image: url(../files/img/fondo.jpg);
   background-repeat: repeat;
   background-position: center center;
   width: 30%;
@@ -77,7 +77,7 @@ html {
 }
 
 span.icone {
-  background-image: url(../files/EE.png);
+  background-image: url(../files/img/EE.png);
   display: inline-block;
   height: 67px;
   width: 68px;
@@ -90,7 +90,7 @@ span.space {
 }
 
 #footer {
-  background-image: url(../files/lineas.png);
+  background-image: url(../files/img/lineas.png);
   height: 90px;
   position: absolute;
   bottom: 0px;
@@ -117,22 +117,22 @@ span.space {
   transition: box-shadow 1s, opacity 1s;
 }
 #back {
-  background-image: url(../files/back.png);
+  background-image: url(../files/img/back.png);
   left: 15px;
   bottom: 15px;
   z-index: 999;
 }
 #next {
-  background-image: url(../files/next.png);
+  background-image: url(../files/img/next.png);
   right: 15px;
   bottom: 15px;
   z-index: 999;
 }
 #back:active {
-  background-image: url(../files/back-active.png);
+  background-image: url(../files/img/back-active.png);
 }
 #next:active {
-  background-image: url(../files/next-active.png);
+  background-image: url(../files/img/next-active.png);
 }
 #next:hover,
 #back:hover {
@@ -254,7 +254,7 @@ div.info {
   -webkit-box-shadow: inset 0px 0px 100px 0px #1f8f99;
   box-shadow: inset 0px 0px 100px 0px #1f8f99;
   background-color: #57c6d0;
-  background-image: url(../files/loader.gif);
+  background-image: url(../files/img/loader.gif);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -281,11 +281,6 @@ div.info {
   margin-left: -65px;
   margin-top: 10px;
   text-shadow: 0px 1px 0px #7cdae2;
-}
-
-#buttonNarracion {
-  width: 20px;
-  height: 20px;
 }
 
 .wrapper {
@@ -407,12 +402,13 @@ div.info {
 }
 
 .containerMonedas {
-  display: flex;
+  display: block;
+  left: 28%;
   justify-content: flex-end;
   position: fixed;
   z-index: 999;
   width: 68vw;
-  height: 8vh;
+  height: 15vh;
   padding: 10px 10px 10px 15px;
   /* background-color: #257880; */
 }
@@ -420,6 +416,40 @@ div.info {
 #monedas {
   justify-content: center;
   align-items: center;
+  /* background-color: blue; */
+}
+
+#narracion {
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  background-color: blue;
+}
+
+input#buttonNarracion {
+  display: none;
+}
+
+input#buttonNarracion + label {
+  position: fixed;
+  left: 50%;
+  padding-top: 30px;
+  border-radius: 10px;
+  background: url(../files/img/Boton\ click.png) no-repeat;
+  width: 300px;
+  height: 90px;
+  /* background-color: yellow; */
+  background-size: 80%;
+  cursor: pointer;
+}
+
+input#buttonNarracion:checked + label {
+  border-radius: 10px;
+  width: 300px;
+  height: 100px;
+  background: url(../files/img/Boton\ apagar.png) no-repeat;
+  /* background-color: red; */
+  background-size: 80%;
 }
 
 #cont {
@@ -464,12 +494,10 @@ div.info {
   z-index: 3;
   font-size: 30px;
   font-family: Lucida Handwriting;
-  /* background-color: blue; */
 }
 
 #edad {
   display: flex;
-  /* background-color: violet; */
   justify-content: center;
   padding: 10px;
   position: absolute;
@@ -509,7 +537,6 @@ li:nth-last-child(2) {
 
 li:hover {
   background-color: #a8b7ee;
-  /* border: 1px solid black; */
   box-shadow: 5px 1px 15px 2px #232323;
 }
 
