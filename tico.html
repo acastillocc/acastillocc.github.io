@@ -294,7 +294,7 @@
         </div>
       </div>
 
-      <audio id="music" loop>
+      <audio id="music" loop autoplay>
         <source src="./files/audios/audioTico.mp3" type="audio/mpeg" />
       </audio>
 
@@ -343,16 +343,17 @@
 
       <!--- SCRIPT AUDIOS --->
       <script>
-        var music = document.getElementById("music");
-        music.volume = 0.13;
+        // var music = document.getElementById("music");
+        // music.volume = 0.35;
 
-        function playAudio() {
-          music.play();
-        }
 
-        function pauseAudio() {
-          music.pause();
-        }
+        // function playAudio() {
+        //   music.play();
+        // }
+
+        // function pauseAudio() {
+        //   music.pause();
+        // }
       </script>
 
       <div id="next" title="Siguiente" onclick="next()"></div>
