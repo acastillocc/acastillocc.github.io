@@ -2,6 +2,22 @@
 
 var mon = 0;
 
+$('#music').prop("volume", 0.3);
+
+function playAudio() {
+  
+  $("#music")
+    .get(0)
+    .play();
+}
+
+function pauseAudio() {
+  
+  $("#music")
+    .get(0)
+    .pause();
+}
+
 var storyContentPages = {
   5: 6,
   7: 0,
@@ -13,6 +29,8 @@ function next() {
   $("#pag" + current)
     .get(0)
     .pause();
+    $('#music').prop("volume", 0.3);
+  $("#buttonNarracion").prop("checked", false);
   $("#pag" + current).get(0).currentTime = 0;
   $(".light, .activate").hide();
   $(".page" + current).fadeOut(1000);
@@ -68,6 +86,8 @@ function prev() {
   $("#pag" + current)
     .get(0)
     .pause();
+    $('#music').prop("volume", 0.3);
+  $("#buttonNarracion").prop("checked", false);
   $("#pag" + current).get(0).currentTime = 0;
   $(".light, .activate").hide();
   $(".page" + current).fadeOut(1000);
@@ -138,14 +158,18 @@ $(document).on("ready", function () {
   });
 });
 
-
 function narracion() {
   var check = document.getElementById("buttonNarracion");
   if (check.checked) {
-    console.log("página #" + current);
-    $("#pag" + current).get(0).play();
+    $('#music').prop("volume", 0.1);
+    $("#pag" + current)
+      .get(0)
+      .play();
   } else {
-    $("#pag" + current).get(0).pause();
+    $('#music').prop("volume", 0.3);
+    $("#pag" + current)
+      .get(0)
+      .pause();
     $("#pag" + current).get(0).currentTime = 0;
   }
 }
