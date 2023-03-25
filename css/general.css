@@ -420,8 +420,6 @@ div.info {
 }
 
 #narracion {
-  justify-content: center;
-  align-items: center;
   margin-top: 10px;
   background-color: blue;
 }
@@ -432,24 +430,20 @@ input#buttonNarracion {
 
 input#buttonNarracion + label {
   position: fixed;
-  left: 50%;
+  left: 54vw;
   padding-top: 30px;
   border-radius: 10px;
   background: url(../files/img/Boton\ click.png) no-repeat;
-  width: 300px;
-  height: 90px;
-  /* background-color: yellow; */
-  background-size: 80%;
+  width: 30vw;
+  height: 50vh;
+  background-size: 50%;
+  margin: 0 auto;
   cursor: pointer;
 }
 
 input#buttonNarracion:checked + label {
-  border-radius: 10px;
-  width: 300px;
-  height: 100px;
   background: url(../files/img/Boton\ apagar.png) no-repeat;
-  /* background-color: red; */
-  background-size: 80%;
+  background-size: 50%;
 }
 
 #cont {
