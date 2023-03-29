@@ -1,4 +1,5 @@
 // JavaScript Document
+
 var crop = 12;
 var intro = false;
 var current = 1;
@@ -7,6 +8,7 @@ var textPage = new Array(11);
 var interactionPage1 = new Array(11);
 var interactionPage2 = new Array(11);
 var ocultdialog = false;
+
 textPage[1] =
   "<span class='icone'></span>" +
   "<p><span class='space'></span>xistió un marcianito llamado Tico a quien le encantaba" +
@@ -105,7 +107,7 @@ textPage[7] =
   "<input type='checkbox' name='amistoso' value='4' id='cualidades_14' />" +
   "Amistoso</label>" +
   "</form>" +
-    "<p>Además, era un niño al que le gustaba practicar varios deportes, entre ellos:</p>" +
+  "<p>Además, era un niño al que le gustaba practicar varios deportes, entre ellos:</p>" +
   "<textarea placeholder='Coloca el nombre de tus deportes favoritos'></textarea>";
 textPage[8] =
   "<p>Muy emocionado, Tico se dispuso a escribir todo lo que había vivido" +
@@ -136,13 +138,23 @@ textPage[10] =
   " <img id='colorGris' src='../files/pag10/colorGris.png' onclick='changeColor()'>" +
   " <img id='imagenSinColor' src='../files/pag10/sinColor.png' onclick='changeColor()'>";
 
-textPage[11] =
-  "<p style='font-size:24px;'>¡Felicitaciones "+
-  "<span class='name_user' style='color: red'></span>! </p> " +
-  "<p> ¡Haz terminado el cuento, gracias por esta aventura única" +
-  " con Tico el Marcianito! <br>" +
-  " Por tu gran esfuerzo, recibiriás un diploma muy especial <br> <br> <br>" +
-  "<a id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi diploma!</a>";
+if (mon >= 0 && mon <= 25) {
+  textPage[11] =
+    "<p style='font-size:24px;'>¡Felicitaciones " +
+    "<span class='name_user' style='color: red'></span>! </p> " +
+    "<p> ¡Haz terminado el cuento, gracias por esta aventura única" +
+    " con Tico el Marcianito! <br>" +
+    " Por tu gran esfuerzo, recibiriás un premio muy especial <br> <br> <br>" +
+    "<a id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi premio!</a>";
+} else if (mon > 26) {
+  textPage[11] =
+    "<p style='font-size:24px;'>¡Felicitaciones " +
+    "<span class='name_user' style='color: red'></span>! </p> " +
+    "<p> ¡Haz terminado el cuento, gracias por esta aventura única" +
+    " con Tico el Marcianito! <br>" +
+    " Por tu gran esfuerzo, recibiriás un diploma muy especial <br> <br> <br>" +
+    "<a id='button-diploma' onclick='diplomaInfo()'>¡más de 25!</a>";
+}
 
 interactionPage1[1] = "80% 50%";
 interactionPage2[1] = "20% 50%";
