@@ -29,7 +29,6 @@ function next() {
   $("#pag" + current)
     .get(0)
     .pause();
-    $('#music').prop("volume", 0.3);
   $("#buttonNarracion").prop("checked", false);
   $("#pag" + current).get(0).currentTime = 0;
   $(".light, .activate").hide();
@@ -86,7 +85,6 @@ function prev() {
   $("#pag" + current)
     .get(0)
     .pause();
-    $('#music').prop("volume", 0.3);
   $("#buttonNarracion").prop("checked", false);
   $("#pag" + current).get(0).currentTime = 0;
   $(".light, .activate").hide();
