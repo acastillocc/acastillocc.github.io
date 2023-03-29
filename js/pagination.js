@@ -193,7 +193,7 @@ function changeColor() {
   }
 
   azul.onclick = function () {
-    document.getElementById("cont").innerHTML = "Monedas: " + mon;
+    $("#cont").html("Monedas: " + mon);
     fondo.style.display = "none";
     fondoMorado.style.display = "none";
     fondoAmarillo.style.display = "none";
@@ -203,7 +203,7 @@ function changeColor() {
   };
 
   morado.onclick = function () {
-    document.getElementById("cont").innerHTML = "Monedas: " + mon;
+    $("#cont").html("Monedas: " + mon);
     fondo.style.display = "none";
     fondoAzul.style.display = "none";
     fondoAmarillo.style.display = "none";
@@ -213,7 +213,7 @@ function changeColor() {
   };
 
   amarillo.onclick = function () {
-    document.getElementById("cont").innerHTML = "Monedas: " + mon;
+    $("#cont").html("Monedas: " + mon);
     fondo.style.display = "none";
     fondoAzul.style.display = "none";
     fondoMorado.style.display = "none";
@@ -223,7 +223,7 @@ function changeColor() {
   };
 
   gris.onclick = function () {
-    document.getElementById("cont").innerHTML = "Monedas: " + mon;
+    $("#cont").html("Monedas: " + mon);
     fondo.style.display = "none";
     fondoAzul.style.display = "none";
     fondoMorado.style.display = "none";
@@ -249,16 +249,16 @@ function diplomaInfo() {
 
   var nombre = document.getElementById("name_text").value;
   var edad = document.getElementById("age_text").value;
-  document.getElementById("nombre").innerHTML = nombre;
-  document.getElementById("edad").innerHTML = edad;
+  $("#nombre").html(nombre);
+  $("#edad").html(edad);
   conteoFinal.innerHTML = "Total de Monedas: " + mon;
 }
 
 function getPDF() {
   var nombre = document.getElementById("name_text").value;
   var edad = document.getElementById("age_text").value;
-  document.getElementById("nombre").innerHTML = nombre;
-  document.getElementById("edad").innerHTML = edad;
+  $("#nombre").html(nombre);
+  $("#edad").html(edad);  
   var HTML_Width = $("#diploma").width();
   var HTML_Height = $("#diploma").height();
   var top_left_margin = 15;
