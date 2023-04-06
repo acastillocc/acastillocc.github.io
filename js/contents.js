@@ -48,8 +48,9 @@ textPage[4] =
 textPage[5] =
   "<p>Al marcar la primera clave en el computador, Tico se sintió transportado" +
   " a otra dimensión al notar que el computador registraba la existencia" +
-  " de niños en la Tierra, y en especial, la señal de un niño llamado" +
-  " <span class='name_user' style='color: red'></span>;</p><p>aunque por varios minutos no podía" +
+  " de niños en la Tierra, y en especial, la señal de " +
+  "<span class='genero_user'></span>" +
+  " <span class='name_user' style='color: red'></span></p><p>Aunque por varios minutos no podía" +
   " creer lo que veían sus ojos, descubrió que era verdad que había niños" +
   " terrícolas, y uno de ellos más especial todavía.</p>";
 textPage[6] =
@@ -138,23 +139,14 @@ textPage[10] =
   " <img id='colorGris' src='../files/pag10/colorGris.png' onclick='changeColor()'>" +
   " <img id='imagenSinColor' src='../files/pag10/sinColor.png' onclick='changeColor()'>";
 
-if (mon >= 0 && mon <= 25) {
   textPage[11] =
     "<p style='font-size:24px;'>¡Felicitaciones " +
     "<span class='name_user' style='color: red'></span>! </p> " +
     "<p> ¡Haz terminado el cuento, gracias por esta aventura única" +
     " con Tico el Marcianito! <br>" +
     " Por tu gran esfuerzo, recibiriás un premio muy especial <br> <br> <br>" +
-    "<a id='button-diploma' onclick='diplomaInfo()'>¡Quiero mi premio!</a>";
-} else if (mon > 26) {
-  textPage[11] =
-    "<p style='font-size:24px;'>¡Felicitaciones " +
-    "<span class='name_user' style='color: red'></span>! </p> " +
-    "<p> ¡Haz terminado el cuento, gracias por esta aventura única" +
-    " con Tico el Marcianito! <br>" +
-    " Por tu gran esfuerzo, recibiriás un diploma muy especial <br> <br> <br>" +
-    "<a id='button-diploma' onclick='diplomaInfo()'>¡más de 25!</a>";
-}
+    "<a id='button-diploma' onclick='validateEmail()'>¡Quiero mi premio!</a>";
+
 
 interactionPage1[1] = "80% 50%";
 interactionPage2[1] = "20% 50%";
