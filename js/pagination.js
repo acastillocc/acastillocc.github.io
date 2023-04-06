@@ -2,20 +2,14 @@
 
 var mon = 0;
 
-$('#music').prop("volume", 0.3);
+$("#music").prop("volume", 0.3);
 
 function playAudio() {
-  
-  $("#music")
-    .get(0)
-    .play();
+  $("#music").get(0).play();
 }
 
 function pauseAudio() {
-  
-  $("#music")
-    .get(0)
-    .pause();
+  $("#music").get(0).pause();
 }
 
 var storyContentPages = {
@@ -37,6 +31,7 @@ function next() {
   $("#text").fadeOut(500, function () {
     $(this).html(textPage[current]);
     $(".name_user").html($("#name_text").val());
+    $(".genero_user").html($("#name_text").val());
     if (current == 5 && ocultdialog == false) {
       $(".dialog_name").dialog({
         width: "auto",
@@ -50,6 +45,11 @@ function next() {
         buttons: {
           Enviar: function () {
             $(".name_user").html($("#name_text").val());
+            if ($("#nino").is(":checked")) {
+              $(".genero_user").html($("#nino").val());
+            } else {
+              $(".genero_user").html($("#nina").val());
+            }
             if ($("#name_text").val() != "") {
               ocultdialog = true;
               if (storyContentPages[current] != undefined) {
@@ -66,6 +66,11 @@ function next() {
     $(this).fadeIn(800, function () {
       $(".light, .activate").fadeIn(500);
       $(".name_user").html($("#name_text").val());
+      if ($("#nino").is(":checked")) {
+        $(".genero_user").html($("#nino").val());
+      } else {
+        $(".genero_user").html($("#nina").val());
+      }
     });
 
     if (storyContentPages[current] != undefined && current > 5) {
@@ -128,7 +133,6 @@ function ubicarActual() {
   }
 
   if (current >= 5 && current <= 11) {
-    // $("#monedas").css("position", "fixed");
     $("#monedas").css("display", "flex");
   } else {
     $("#monedas").css("display", "none");
@@ -159,12 +163,12 @@ $(document).on("ready", function () {
 function narracion() {
   var check = document.getElementById("buttonNarracion");
   if (check.checked) {
-    $('#music').prop("volume", 0.1);
+    $("#music").prop("volume", 0.1);
     $("#pag" + current)
       .get(0)
       .play();
   } else {
-    $('#music').prop("volume", 0.3);
+    $("#music").prop("volume", 0.3);
     $("#pag" + current)
       .get(0)
       .pause();
@@ -240,6 +244,50 @@ function changeColor() {
   };
 }
 
+function validateEmail() {
+  Swal.fire({
+    title: "<strong style='font-family:Bubblegum Sans'>¡Espera!</strong>",
+    width: "60vw",
+    heightAuto: false,
+    background: "#70D0F6",
+    color: "black",
+    html: "<span style='font-family:Bubblegum Sans'>¡Dile a tus padres o profesores que escriban su correo electrónico para que puedas recibir tu premio!</span><input id='correo' required/>",
+    showLoaderOnConfirm: true,
+    showCloseButton: true,
+    confirmButtonColor: "slateblue",
+    focusConfirm: true,
+    confirmButtonText: "¡Enviar correo!",
+    preConfirm: () => {
+      if (document.getElementById("correo").value) {
+        sendEmail();
+        diplomaInfo();
+      } else {
+        Swal.showValidationMessage("Por favor digita un correo");
+      }
+    },
+  });
+}
+
+function sendEmail() {
+  var params = {
+    name: $("#name_text").val(),
+    email: $("#correo").val(),
+    monedas: mon,
+  };
+
+  const serviceID = "service_g3d5akx";
+  const templateID = "template_bmx403p";
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      document.getElementById("name_text").value = "";
+      mon;
+      console.log(res);
+    })
+    .catch((err) => console.log(err));
+}
+
 function diplomaInfo() {
   var conteoFinal = document.getElementById("contFinal");
   $(".diplomaHide").css("display", "none");
@@ -256,7 +304,7 @@ function getPDF() {
   var nombre = document.getElementById("name_text").value;
   var edad = document.getElementById("age_text").value;
   $("#nombre").html(nombre);
-  $("#edad").html(edad);  
+  $("#edad").html(edad);
   var HTML_Width = $("#diploma").width();
   var HTML_Height = $("#diploma").height();
   var top_left_margin = 15;
